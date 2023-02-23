@@ -1,15 +1,13 @@
 const express = require('express');
 const path = require('path');
-//const notes = require('./db/db.json');
-const routesApi = require('./routes/routesApi');
+const notes =require('./routes/notes');
 const routesHtml = require('./routes/routesHtml');
 const app = express();
 const PORT = process.env.Port || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static('public'));
-app.use('/api', routesApi);
+app.use('/api', notes);
 app.use('/', routesHtml);
 
 app.use(express.static('public'));

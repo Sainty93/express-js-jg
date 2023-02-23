@@ -5,11 +5,11 @@ const { readAndAppend, readFromFile } = require('../help/fsUtils');
 const uuid = require('../help/uuid');
 //help and express routes import
 
-note.get('/', (req, res) => readFromFile('./db/db.json').then((data) => 
+note.get('/notes', (req, res) => readFromFile('./db/db.json').then((data) => 
 res.json(json.parse(data))));
 //saved notes on sidebar
 
-note.get('/:id', (req, res) => {
+note.get('notes/:id', (req, res) => {
     const savedNote = req.params.id;
     readFromFile('./db/db.json').then((data) =>
     json.parse(data))
@@ -18,7 +18,7 @@ note.get('/:id', (req, res) => {
         return result.length > 0 ? res.json(result) : res.json('This note does not exist');
     });
 });
-note.post('/', (req, res) => {
+note.post('/notes', (req, res) => {
     const { title, text, id } = req.body;
 
     if (title && text) {
