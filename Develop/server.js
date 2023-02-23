@@ -4,7 +4,7 @@ const notes =require('./routes/notes');
 const routesHtml = require('./routes/routesHtml');
 const app = express();
 const PORT = process.env.Port || 3001;
-
+const html = require('./routes/html');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', notes);

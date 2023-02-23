@@ -1,7 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text",
-        "id": "sampleID1232189324"
+        "title": "Remember to complete homework",
+        "text": "You have assignments due",
+        "id": "3f78"
+    },
+    {
+        "title": "Finish your homework",
+        "text": "Very important",
+        "id": "e8c12"
     }
 ]
